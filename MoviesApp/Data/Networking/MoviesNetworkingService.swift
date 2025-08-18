@@ -9,6 +9,7 @@ import UIKit
 
 enum MoviesNetworkingServiceError: Error {
     case invalidStatusCode
+    case invalidData
 }
 
 protocol MoviesNetworkingService {
