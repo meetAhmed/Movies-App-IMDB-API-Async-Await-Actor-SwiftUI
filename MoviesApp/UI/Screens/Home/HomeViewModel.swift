@@ -7,7 +7,6 @@
 
 import Combine
 
-@MainActor
 class HomeViewModel: ObservableObject {
     @Published var trendingMovies: [Movie] = []
     @Published var topMovie: Movie? = nil
@@ -17,6 +16,7 @@ class HomeViewModel: ObservableObject {
     @Injected var movieService: MoviesNetworkingService!
     @Injected var errorHandler: MErrorHandler!
     
+    @MainActor
     func fetchTrending() async {
         isLoadingTrendingMovies = true
         do {
